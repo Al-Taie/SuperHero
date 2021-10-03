@@ -1,4 +1,4 @@
-package com.watermelon.superhero.model.data.repository
+package com.watermelon.superhero.model.repository
 
 object MainRepository {
 
