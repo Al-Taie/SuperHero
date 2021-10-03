@@ -10,13 +10,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="8dp">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/hero_image"
             android:layout_width="match_parent"
             android:layout_height="430dp"
-            android:layout_margin="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -26,12 +26,10 @@
             android:id="@+id/hero_name"
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:layout_marginLeft="8dp"
             android:layout_marginTop="4dp"
             android:fontFamily="sans-serif-black"
             android:gravity="left"
             android:hint="Thor"
-            android:paddingLeft="4dp"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -44,16 +42,13 @@
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:layout_marginTop="4dp"
-            android:layout_marginLeft="8dp"
             android:fontFamily="sans-serif-black"
-
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/hero_name"
             android:hint="Thor"
             android:textColor="@android:color/darker_gray"
             android:textSize="14sp"
             android:gravity="left"
-            android:paddingLeft="4dp"
             android:textStyle="bold"
             tools:text="description"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
