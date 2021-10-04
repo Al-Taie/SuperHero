@@ -3,7 +3,7 @@ package com.watermelon.superhero.model.data.response
 
 import com.google.gson.annotations.SerializedName
 
-data class Result(
+data class Hero(
     @SerializedName("appearance")
     val appearance: Appearance?,
     @SerializedName("biography")

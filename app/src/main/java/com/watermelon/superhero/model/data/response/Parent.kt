@@ -7,7 +7,7 @@ data class Parent(
     @SerializedName("response")
     val response: String?,
     @SerializedName("results")
-    val results: List<Result>?,
+    val results: List<Hero>?,
     @SerializedName("results-for")
     val resultsFor: String?
 )
