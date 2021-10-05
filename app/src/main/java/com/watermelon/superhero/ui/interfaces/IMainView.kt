@@ -5,5 +5,6 @@ import com.watermelon.superhero.model.data.response.Hero
 interface IMainView {
     fun showLoading()
     fun hideLoading()
-    fun onResponse(result: List<Hero>)
+    fun showError()
+    fun updateUI(result: List<Hero>)
 }
