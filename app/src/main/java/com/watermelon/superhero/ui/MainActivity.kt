@@ -13,7 +13,7 @@ import com.watermelon.superhero.ui.interfaces.IMainView
 import com.watermelon.superhero.util.slideVisibility
 
 class MainActivity : BaseActivity<ActivityMainBinding>(), IMainView {
-    override val theme = R.style.Theme_SuperHero
+    override val theme = R.style.splashScreenTheme
     private lateinit var homeListener: HomeListener
     private val mainPresenter = HomePresenter()
 
