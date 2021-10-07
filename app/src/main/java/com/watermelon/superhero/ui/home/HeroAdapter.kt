@@ -25,7 +25,7 @@ class HeroAdapter(private val list: List<Hero>) :
         holder.binding.apply {
             with(list[position]) {
                 heroName.text = name.toString()
-                heroDescription.text = work?.occupation.toString()
+//                heroDescription.text = work?.occupation.toString()
                 loadImage(image?.url.toString(), heroImage)
             }
         }

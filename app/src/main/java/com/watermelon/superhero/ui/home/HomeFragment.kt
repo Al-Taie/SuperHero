@@ -21,7 +21,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeListener {
     override fun updateHomeUI(result: List<Hero>) {
         binding.recyclerHero.adapter = HeroAdapter(result)
         recyclerStyle()
-
     }
 
     fun recyclerStyle(){

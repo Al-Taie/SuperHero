@@ -18,5 +18,4 @@ object MainRepository {
             emit(Client.makeSuperHeroRequest())
         }.flowOn(dispatcher)
     }
-
 }
