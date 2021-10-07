@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Time TraveleR/AndroidStudioProjects/SuperHero/app/src/main/res/drawable/shape_search_bar.xml" value="0.3828125" />
+        <entry key="..\:/Users/Time TraveleR/AndroidStudioProjects/SuperHero/app/src/main/res/layout/fragment_biography.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Time TraveleR/AndroidStudioProjects/SuperHero/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Time TraveleR/AndroidStudioProjects/SuperHero/app/src/main/res/layout/fragment_search.xml" value="0.33" />
+        <entry key="..\:/Users/Time TraveleR/AndroidStudioProjects/SuperHero/app/src/main/res/layout/item_hero.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Time TraveleR/AndroidStudioProjects/SuperHero/app/src/main/res/layout/item_search_recycler_view.xml" value="0.36666666666666664" />
         <entry key="..\:/WorkSpace/Kotlin/Tasks/SuperHero/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/WorkSpace/Kotlin/Tasks/SuperHero/app/src/main/res/layout/fragment_biography.xml" value="0.25" />
         <entry key="..\:/WorkSpace/Kotlin/Tasks/SuperHero/app/src/main/res/layout/fragment_home.xml" value="0.25" />
