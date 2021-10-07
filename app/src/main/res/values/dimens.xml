@@ -14,4 +14,8 @@
     <dimen name="padding3x">24dp</dimen>
     <dimen name="margin4x">32dp</dimen>
     <dimen name="margin5x">40dp</dimen>
+    <dimen name="search_bar_corners_radius">8dp</dimen>
+    <dimen name="text20sp">20sp</dimen>
+    <dimen name="text18sp">18sp</dimen>
+    <dimen name="margin28dp">28dp</dimen>
 </resources>

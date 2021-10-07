@@ -13,8 +13,25 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
     <style name="ShapeAppearanceOverlay.App.CornerSize10Percent" parent="">
         <item name="cornerSize">10%</item>
+    </style>
+
+    <style name="SearchBar">
+        <item name="android:padding">@dimen/padding2x</item>
+        <item name="android:layout_marginVertical">@dimen/margin3x</item>
+        <item name="android:layout_marginHorizontal">@dimen/margin2x</item>
+        <item name="android:drawablePadding">@dimen/padding1x</item>
+        <item name="android:hint">@string/search</item>
+        <item name="android:drawableStart">@drawable/ic_baseline_search_24</item>
+        <item name="android:drawableEnd">@drawable/ic_baseline_close_24</item>
+        <item name="android:background">@drawable/shape_search_bar</item>
+    </style>
+
+    <style name="splashScreenTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_image</item>
+        <item name="android:statusBarColor">@color/white</item>
     </style>
 
 </resources>
