@@ -15,8 +15,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:inputType="text"
-        tools:ignore="Autofill,LabelFor"
-        />
+        tools:ignore="Autofill,LabelFor" />
+
+    <View
+        android:id="@+id/break_line"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginVertical="12dp"
+        android:background="@color/lightGrey"
+        app:layout_constraintEnd_toEndOf="@+id/search_bar"
+        app:layout_constraintStart_toStartOf="@+id/search_bar"
+        app:layout_constraintTop_toBottomOf="@id/search_bar" />
 
     <TextView
         android:id="@+id/text_message"
@@ -25,7 +34,7 @@
         android:text="@string/search_fragment_message"
         android:textSize="@dimen/text2x"
         android:textColor="@color/textColor"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,12 +44,10 @@
         android:id="@+id/search_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:visibility="visible"
         android:layout_margin="@dimen/margin3x"
-        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_bar"
-        app:layout_constraintVertical_bias="0.458"
-        tools:layout_editor_absoluteX="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/break_line"
         tools:listitem="@layout/item_search_recycler_view" />
 
 
