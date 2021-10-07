@@ -30,6 +30,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeListener {
             }
             setHasFixedSize(true)
         }
+
     }
 
 

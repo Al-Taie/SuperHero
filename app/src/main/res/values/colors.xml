@@ -19,5 +19,6 @@
     <color name="blue">#A1DBEF</color>
     <color name="orange">#F6C193</color>
     <color name="background">#F8F8F8</color>
+    <color name="hintBackground">#75B086</color>
 
 </resources>
