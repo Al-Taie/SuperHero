@@ -10,7 +10,8 @@ import com.watermelon.superhero.ui.interfaces.HomeListener
 class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeListener {
     override fun setup() {}
 
-    override fun callBack() {}
+    override fun callBack() {
+    }
 
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentHomeBinding
         get() = FragmentHomeBinding::inflate
