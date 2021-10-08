@@ -18,10 +18,10 @@ object MainRepository {
             emit(Client.makeSuperHeroRequest())
         }.flowOn(dispatcher)
     }
-    fun getSuperHeroSearch(): Flow<Status<Parent>>{
+    fun getSuperHeroSearch(text: CharSequence?): Flow<Status<Parent>>{
         return flow {
             emit(Status.Loading)
-            emit(Client. makeSearchRequest())
+            emit(Client. makeSearchRequest(text))
         }.flowOn(dispatcher)
     }
 

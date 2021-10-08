@@ -10,12 +10,16 @@ import com.watermelon.superhero.presenter.ISearchPresenter
 import com.watermelon.superhero.presenter.SearchPresenter
 import com.watermelon.superhero.ui.base.BaseFragment
 
-class SearchFragment : BaseFragment<FragmentSearchBinding>(),ISearchPresenter{
-   private val presenter=SearchPresenter()
+class SearchFragment : BaseFragment<FragmentSearchBinding>(), ISearchPresenter {
+
+    private val presenter = SearchPresenter()
 
     override fun setup() {
-        presenter.view=this
-        presenter.getSearch()
+        presenter.view = this
+        binding.searchBar.doOnTextChanged { text, start, before, count ->
+            presenter.getSearch(text)
+        }
+
 
     }
 
@@ -25,9 +29,9 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(),ISearchPresenter{
         get() = FragmentSearchBinding::inflate
 
 
-    override  fun onSearchResult(result: List<Hero>) {
+    override fun onSearchResult(result: List<Hero>) {
 
-            Log.d("searchresult",result.toString())
+        Log.d("searchresult", result.toString())
     }
 
     override fun showLoading() {

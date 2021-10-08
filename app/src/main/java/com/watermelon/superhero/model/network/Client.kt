@@ -35,8 +35,9 @@ object Client : IClient {
             .build()
     }
 
-    fun makeSearchRequest():Status<Parent>{
-        val url = initUrl(path = Link.Path.SEARCH)
+
+    fun makeSearchRequest(text: CharSequence?): Status<Parent> {
+        val url = initUrl(path = Link.Path.SEARCH, text.toString())
         val request = Request.Builder().url(url).build()
         val response = client.newCall(request).execute()
         return if (response.isSuccessful) {
@@ -46,4 +47,16 @@ object Client : IClient {
             Status.Fail(response.message)
         }
     }
+
+    override fun initUrl(path: String, text: CharSequence): HttpUrl {
+        return HttpUrl.Builder()
+            .scheme(Link.SCHEMA)
+            .host(Link.HOST)
+            .addPathSegment(Link.Path.API)
+            .addPathSegment(Link.ACCESS_TOKEN)
+            .addPathSegment(path)
+            .addPathSegment(text.toString())
+            .build()
+    }
+
 }
