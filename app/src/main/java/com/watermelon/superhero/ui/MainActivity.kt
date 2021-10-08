@@ -10,6 +10,7 @@ import com.watermelon.superhero.ui.base.BaseActivity
 import com.watermelon.superhero.ui.home.HomeFragment
 import com.watermelon.superhero.ui.interfaces.HomeListener
 import com.watermelon.superhero.ui.interfaces.IMainView
+import com.watermelon.superhero.ui.search.SearchFragment
 import com.watermelon.superhero.util.slideVisibility
 
 class MainActivity : BaseActivity<ActivityMainBinding>(), IMainView {
@@ -20,6 +21,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), IMainView {
     override fun setup() {
         mainPresenter.view = this
         mainPresenter.bindOnUI()
+        binding.move.setOnClickListener(){
+            val searchFragment=SearchFragment()
+            replaceFragment(fragment = searchFragment)
+        }
     }
 
     override fun callBack() {}

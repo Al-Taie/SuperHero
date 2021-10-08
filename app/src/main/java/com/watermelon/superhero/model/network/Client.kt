@@ -34,4 +34,16 @@ object Client : IClient {
             .addPathSegment(MainRepository.superHeroName)
             .build()
     }
+
+    fun makeSearchRequest():Status<Parent>{
+        val url = initUrl(path = Link.Path.SEARCH)
+        val request = Request.Builder().url(url).build()
+        val response = client.newCall(request).execute()
+        return if (response.isSuccessful) {
+            val result = Gson().fromJson(response.body?.string(), Parent::class.java)
+            Status.Success(result)
+        } else {
+            Status.Fail(response.message)
+        }
+    }
 }

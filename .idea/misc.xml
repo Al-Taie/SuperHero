@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/user/AndroidStudioProjects/SuperHero/app/src/main/res/layout/activity_main.xml" value="0.13858695652173914" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/SuperHero/app/src/main/res/layout/fragment_home.xml" value="0.13858695652173914" />
         <entry key="..\:/Users/user/AndroidStudioProjects/SuperHero/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2203125" />
         <entry key="..\:/Users/user/AndroidStudioProjects/SuperHero/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2203125" />
         <entry key="..\:/WorkSpace/Kotlin/Tasks/SuperHero/app/src/main/res/layout/activity_main.xml" value="0.1" />
