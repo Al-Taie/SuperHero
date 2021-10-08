@@ -22,11 +22,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), IMainView {
     override fun setup() {
         mainPresenter.view = this
         mainPresenter.bindOnUI()
-
-//        binding.move.setOnClickListener {
-//            val searchFragment = SearchFragment()
-//            replaceFragment(fragment = searchFragment)
-//        }
     }
 
     override fun callBack() {}

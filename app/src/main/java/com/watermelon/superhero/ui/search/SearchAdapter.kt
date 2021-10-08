@@ -1,6 +1,5 @@
 package com.watermelon.superhero.ui.search
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -24,13 +23,11 @@ class SearchAdapter(private val list: List<Hero>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        Log.i("searchResult", list.toString())
         holder.binding.apply {
             with(list[position]) {
                 textHeroName.text = name.toString()
-                textHeroRealName.text = name.toString()
+                textHeroRealName.text = biography?.fullName
                 loadImage(image?.url.toString(), itemImage)
-                Log.i("searchResultTwo",textHeroName.text.toString())
             }
 
         }
