@@ -2,12 +2,14 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/details_card"
+    android:id="@+id/biography_card"
     app:cardBackgroundColor="@color/backgroundColor"
     android:layout_margin="@dimen/margin2x"
     app:cardCornerRadius="16dp"
     android:layout_width="match_parent"
     android:layout_height="250dp">
+
+    <!-- last item to appear in the recyclerview -->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,21 +18,14 @@
 
         <TextView
             android:id="@+id/aliases_headline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/lora_bold"
-            android:textColor="@color/black"
-            android:textSize="18sp"
+            style="@style/detailsHeadlineTextStyle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:text="@string/aliases"/>
 
         <TextView
             android:id="@+id/aliases_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/brandColor"
-            android:textSize="16sp"
+            style="@style/detailsTextStyle"
             tools:text="Insider, Matches Malone"
             android:layout_marginTop="@dimen/margin14dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,22 +33,15 @@
 
         <TextView
             android:id="@+id/place_of_birth_headline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/lora_bold"
+            style="@style/detailsHeadlineTextStyle"
             android:text="@string/place_of_birth"
-            android:textColor="@color/black"
             android:layout_marginTop="@dimen/margin14dp"
-            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/aliases_text" />
 
         <TextView
             android:id="@+id/place_of_birth_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/brandColor"
-            android:textSize="16sp"
+            style="@style/detailsTextStyle"
             tools:text="Crest Hill, Bristol Township,\nGotham County"
             android:layout_marginTop="@dimen/margin14dp"
             app:layout_constraintStart_toStartOf="parent"
