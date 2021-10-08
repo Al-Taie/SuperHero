@@ -1,7 +1,6 @@
 package com.watermelon.superhero.ui
 
 import android.view.LayoutInflater
-import androidx.fragment.app.Fragment
 import com.watermelon.superhero.R
 import com.watermelon.superhero.databinding.ActivityMainBinding
 import com.watermelon.superhero.model.data.response.Hero
@@ -59,15 +58,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), IMainView {
     }
 
     override fun updateUI(result: List<Hero>) {
-        homeListener = supportFragmentManager.fragments[0] as HomeFragment
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
+        homeListener = navHostFragment?.childFragmentManager?.fragments?.get(0) as HomeFragment
         homeListener.updateHomeUI(result = result)
 
     }
 
-    private fun replaceFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fragment_container, fragment)
-            addToBackStack(null)
-        }.commit()
-    }
 }

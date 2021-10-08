@@ -2,7 +2,6 @@ package com.watermelon.superhero.ui.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
 import com.mig35.carousellayoutmanager.CarouselLayoutManager
 import com.mig35.carousellayoutmanager.CarouselZoomPostLayoutListener
 import com.watermelon.superhero.databinding.FragmentHomeBinding
@@ -13,7 +12,8 @@ import com.watermelon.superhero.ui.interfaces.HomeListener
 class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeListener {
     override fun setup() {}
 
-    override fun callBack() {}
+    override fun callBack() {
+    }
 
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentHomeBinding
         get() = FragmentHomeBinding::inflate
@@ -23,7 +23,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeListener {
         recyclerStyle()
     }
 
-    fun recyclerStyle(){
+    private fun recyclerStyle(){
         binding.recyclerHero.run {
             this.layoutManager = CarouselLayoutManager(CarouselLayoutManager.HORIZONTAL).apply {
                 setPostLayoutListener(CarouselZoomPostLayoutListener())
