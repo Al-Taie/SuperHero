@@ -22,6 +22,7 @@
     <color name="hintBackground">#75B086</color>
     <color name="hintText">#BBBBBB</color>
     <color name="headerText">#767676</color>
+    <color name="searchStroke">#AACAB3</color>
 
 
 </resources>
