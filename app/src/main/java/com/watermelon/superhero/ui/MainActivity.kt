@@ -23,6 +23,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), IMainView {
     override fun setup() {
         mainPresenter.view = this
         mainPresenter.bindOnUI()
+
     }
 
     override fun callBack() {}

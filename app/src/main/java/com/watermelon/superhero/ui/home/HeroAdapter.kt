@@ -7,6 +7,8 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.mig35.carousellayoutmanager.CarouselLayoutManager
+import com.mig35.carousellayoutmanager.CarouselZoomPostLayoutListener
 import com.watermelon.superhero.R
 import com.watermelon.superhero.databinding.ItemHeroBinding
 import com.watermelon.superhero.model.data.response.Hero
@@ -26,7 +28,7 @@ class HeroAdapter(private val list: List<Hero>) :
             with(list[position]) {
                 val imageUrl = image?.url.toString()
                 heroName.text = name.toString()
-                heroDescription.text = work?.occupation.toString()
+//                heroDescription.text = work?.occupation.toString()
                 loadImage(imageUrl, heroImage)
                 heroImage.setOnClickListener { view ->
                     val action = HomeFragmentDirections.actionHomeFragmentToBiographyFragment(imageUrl)
