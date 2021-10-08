@@ -34,4 +34,29 @@ object Client : IClient {
             .addPathSegment(MainRepository.superHeroName)
             .build()
     }
+
+
+    fun makeSearchRequest(text: CharSequence?): Status<Parent> {
+        val url = initUrl(path = Link.Path.SEARCH, text.toString())
+        val request = Request.Builder().url(url).build()
+        val response = client.newCall(request).execute()
+        return if (response.isSuccessful) {
+            val result = Gson().fromJson(response.body?.string(), Parent::class.java)
+            Status.Success(result)
+        } else {
+            Status.Fail(response.message)
+        }
+    }
+
+    override fun initUrl(path: String, text: CharSequence): HttpUrl {
+        return HttpUrl.Builder()
+            .scheme(Link.SCHEMA)
+            .host(Link.HOST)
+            .addPathSegment(Link.Path.API)
+            .addPathSegment(Link.ACCESS_TOKEN)
+            .addPathSegment(path)
+            .addPathSegment(text.toString())
+            .build()
+    }
+
 }
