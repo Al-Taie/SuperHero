@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src= "@color/brandColor"/>
+        tools:src="@color/brandColor" />
 
     <View
         android:id="@+id/image_gradient"
@@ -61,6 +61,15 @@
         app:layout_constraintTop_toBottomOf="@+id/hero_name"
         tools:text="(Bruce Wayne)"/>
 
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/biography_recycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/details_background"
+        app:layout_constraintTop_toBottomOf="@+id/hero_image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
