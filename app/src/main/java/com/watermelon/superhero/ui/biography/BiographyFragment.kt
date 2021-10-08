@@ -1,6 +1,5 @@
 package com.watermelon.superhero.ui.biography
 
-import android.os.Bundle
 import android.transition.TransitionInflater
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -14,8 +13,12 @@ import com.watermelon.superhero.ui.base.BaseFragment
 
 class BiographyFragment : BaseFragment<FragmentBiographyBinding>() {
     private val args: BiographyFragmentArgs by navArgs()
-    override fun setup() {}
 
+    override fun setup() {
+        sharedElementEnterTransition = TransitionInflater.from(context)
+            .inflateTransition(android.R.transition.move)
+
+    }
     override fun callBack() {
        val imageUrl = args.currentImage
         loadImage(imageUrl,binding.heroImage)
@@ -32,8 +35,5 @@ class BiographyFragment : BaseFragment<FragmentBiographyBinding>() {
             .into(view)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
-    }
+
 }
