@@ -9,8 +9,7 @@
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/hero_image"
         android:layout_width="match_parent"
-        android:layout_height="680dp"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
+        android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:transitionName="@string/image_transition"
         app:layout_constraintLeft_toLeftOf="parent"

@@ -9,19 +9,18 @@ import com.bumptech.glide.Glide
 import com.watermelon.superhero.R
 import com.watermelon.superhero.databinding.FragmentBiographyBinding
 import com.watermelon.superhero.ui.base.BaseFragment
+import kotlinx.coroutines.delay
 
 
 class BiographyFragment : BaseFragment<FragmentBiographyBinding>() {
     private val args: BiographyFragmentArgs by navArgs()
 
-    override fun setup() {
+    override fun setup() {}
+    override fun callBack() {
+        val imageUrl = args.currentImage
+        loadImage(imageUrl,binding.heroImage)
         sharedElementEnterTransition = TransitionInflater.from(context)
             .inflateTransition(android.R.transition.move)
-
-    }
-    override fun callBack() {
-       val imageUrl = args.currentImage
-        loadImage(imageUrl,binding.heroImage)
     }
 
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentBiographyBinding
