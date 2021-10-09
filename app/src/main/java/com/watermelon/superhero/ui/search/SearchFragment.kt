@@ -16,7 +16,6 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), ISearchPresenter {
 
     override fun setup() {
         presenter.view = this
-
         binding.searchBar.doOnTextChanged { text, _, _, _ ->
             presenter.getSearch(text)
         }

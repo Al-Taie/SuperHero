@@ -28,7 +28,9 @@ class HeroAdapter(private val list: List<Hero>) :
                 heroName.text = name.toString()
                 loadImage(imageUrl, heroImage)
                 heroImage.setOnClickListener { view ->
-                    val action = HomeFragmentDirections.actionHomeFragmentToBiographyFragment(imageUrl)
+                    val action = HomeFragmentDirections.actionHomeFragmentToBiographyFragment(
+                        currentImage = imageUrl,
+                        currentSearchImage = "")
                     val extras = FragmentNavigatorExtras(
                         heroImage to view.context.getString(R.string.image_transition)
                     )
