@@ -6,7 +6,7 @@
         android:color="@color/white"/>
 
     <stroke
-        android:color="@color/brandColor"
+        android:color="@color/searchStroke"
         android:width="1dp"/>
 
     <corners

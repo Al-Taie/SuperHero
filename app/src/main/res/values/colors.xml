@@ -11,7 +11,7 @@
 
     <color name="brandColor">#478859</color>
     <color name="secondaryBrandColor">#282828</color>
-    <color name="backgroundColor">#D4D6D7</color>
+    <color name="backgroundColor">#CFD7D1</color>
     <color name="lightGrey">#EBEBEB</color>
     <color name="textColor">#476740</color>
     <color name="splashColor">#CFD7D1</color>
@@ -20,5 +20,9 @@
     <color name="orange">#F6C193</color>
     <color name="background">#F8F8F8</color>
     <color name="hintBackground">#75B086</color>
+    <color name="hintText">#BBBBBB</color>
+    <color name="headerText">#767676</color>
+    <color name="searchStroke">#AACAB3</color>
+
 
 </resources>
