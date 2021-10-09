@@ -22,7 +22,7 @@
 
     <style name="SearchBar">
         <item name="android:padding">@dimen/padding2x</item>
-        <item name="android:layout_marginVertical">@dimen/margin3x</item>
+        <item name="android:layout_marginVertical">@dimen/text1x</item>
         <item name="android:layout_marginHorizontal">@dimen/margin2x</item>
         <item name="android:drawablePadding">@dimen/padding1x</item>
         <item name="android:hint">@string/search</item>

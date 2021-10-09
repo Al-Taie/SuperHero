@@ -11,16 +11,17 @@
         <entry key="..\:/WorkSpace/Kotlin/Tasks/SuperHero/app/src/main/res/layout/item_hero.xml" value="0.536" />
         <entry key="..\:/projects/SuperHero/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.10811965811965812" />
         <entry key="..\:/projects/SuperHero/app/src/main/res/drawable/header_shap.xml" value="0.15046296296296297" />
+        <entry key="..\:/projects/SuperHero/app/src/main/res/drawable/header_shape.xml" value="0.11018518518518519" />
         <entry key="..\:/projects/SuperHero/app/src/main/res/drawable/header_transparent.xml" value="0.17592592592592593" />
         <entry key="..\:/projects/SuperHero/app/src/main/res/drawable/hint_background.xml" value="0.1" />
         <entry key="..\:/projects/SuperHero/app/src/main/res/drawable/ic_baseline_error_outline_24.xml" value="0.1" />
         <entry key="..\:/projects/SuperHero/app/src/main/res/drawable/item_header_background.xml" value="0.236986301369863" />
         <entry key="..\:/projects/SuperHero/app/src/main/res/drawable/shape_search_bar.xml" value="0.17037037037037037" />
         <entry key="..\:/projects/SuperHero/app/src/main/res/layout/activity_main.xml" value="0.14705882352941177" />
-        <entry key="..\:/projects/SuperHero/app/src/main/res/layout/fragment_biography.xml" value="0.1" />
+        <entry key="..\:/projects/SuperHero/app/src/main/res/layout/fragment_biography.xml" value="0.2" />
         <entry key="..\:/projects/SuperHero/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/projects/SuperHero/app/src/main/res/layout/fragment_search.xml" value="0.264" />
-        <entry key="..\:/projects/SuperHero/app/src/main/res/layout/item_hero.xml" value="0.18" />
+        <entry key="..\:/projects/SuperHero/app/src/main/res/layout/item_hero.xml" value="0.2" />
         <entry key="..\:/projects/SuperHero/app/src/main/res/layout/item_search_recycler_view.xml" value="0.1102077687443541" />
       </map>
     </option>
