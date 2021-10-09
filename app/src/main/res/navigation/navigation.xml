@@ -25,10 +25,19 @@
         <argument
             android:name="current_image"
             app:argType="string" />
+        <argument
+            android:name="current_search_image"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.watermelon.superhero.ui.search.SearchFragment"
         android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_biographyFragment"
+            app:destination="@id/biographyFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
 </navigation>

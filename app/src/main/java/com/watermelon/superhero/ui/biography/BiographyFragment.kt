@@ -17,7 +17,11 @@ class BiographyFragment : BaseFragment<FragmentBiographyBinding>() {
 
     override fun setup() {}
     override fun callBack() {
-        val imageUrl = args.currentImage
+        val imageUrl = if(args.currentImage != ""){
+            args.currentImage
+        }else{
+            args.currentSearchImage
+        }
         loadImage(imageUrl,binding.heroImage)
         sharedElementEnterTransition = TransitionInflater.from(context)
             .inflateTransition(android.R.transition.move)
