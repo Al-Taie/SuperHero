@@ -23,12 +23,18 @@
         android:label="fragment_biography"
         tools:layout="@layout/fragment_biography" >
         <argument
-            android:name="current_image"
-            app:argType="string" />
+            android:name="current_hero"
+            app:argType="com.watermelon.superhero.model.data.response.Hero" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.watermelon.superhero.ui.search.SearchFragment"
         android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_biographyFragment"
+            app:destination="@id/biographyFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
 </navigation>

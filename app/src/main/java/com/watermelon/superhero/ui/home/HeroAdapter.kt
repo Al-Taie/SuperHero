@@ -10,9 +10,12 @@ import com.bumptech.glide.Glide
 import com.watermelon.superhero.R
 import com.watermelon.superhero.databinding.ItemHeroBinding
 import com.watermelon.superhero.model.data.response.Hero
+import com.watermelon.superhero.ui.interfaces.HomeListener
 
 class HeroAdapter(private val list: List<Hero>) :
     RecyclerView.Adapter<HeroAdapter.ViewHolder>() {
+    lateinit var listener: HomeListener
+
     inner class ViewHolder(val binding: ItemHeroBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -26,15 +29,10 @@ class HeroAdapter(private val list: List<Hero>) :
             with(list[position]) {
                 val imageUrl = image?.url.toString()
                 heroName.text = name.toString()
+//                heroDescription.text = work?.occupation.toString()
                 loadImage(imageUrl, heroImage)
-                heroImage.setOnClickListener { view ->
-                    val action = HomeFragmentDirections.actionHomeFragmentToBiographyFragment(imageUrl)
-                    val extras = FragmentNavigatorExtras(
-                        heroImage to view.context.getString(R.string.image_transition)
-                    )
-                    Navigation.findNavController(view).navigate(action,extras)
-                }
-                heroDescription.text = work?.occupation.toString()
+
+                cardHero.setOnClickListener { listener.onItemClicked(heroImage, hero = this) }
             }
 
         }

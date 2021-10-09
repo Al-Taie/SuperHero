@@ -3,6 +3,7 @@ package com.watermelon.superhero.ui.search
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.watermelon.superhero.R
@@ -25,9 +26,14 @@ class SearchAdapter(private val list: List<Hero>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.apply {
             with(list[position]) {
+                val imageUrl = image?.url.toString()
                 textHeroName.text = name.toString()
                 textHeroRealName.text = biography?.fullName
-                loadImage(image?.url.toString(), itemImage)
+                loadImage(imageUrl, itemImage)
+                itemImage.setOnClickListener { view ->
+                    val action = SearchFragmentDirections.actionSearchFragmentToBiographyFragment(this)
+                    Navigation.findNavController(view).navigate(action)
+                }
             }
 
         }

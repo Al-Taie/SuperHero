@@ -5,6 +5,7 @@ import com.watermelon.superhero.model.repository.MainRepository
 import com.watermelon.superhero.ui.interfaces.IMainView
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -16,17 +17,17 @@ class HomePresenter : IHomePresenter {
         val repository = MainRepository
 
         CoroutineScope(dispatcher).launch  {
-            repository.getSuperHero().collect { response ->
+            repository.getSuperHero().catch {
+                view.showError()
+            }.collect { response ->
                 when (response) {
                     is Status.Success -> response.data.results?.let { result ->
                         view.hideLoading()
                         view.updateUI(result = result)
                     }
-                    is Status.Loading -> { view.showLoading() }
-                    is Status.Fail -> { view.showError() }
+                    else -> { view.showLoading() }
                 }
             }
         }
-
     }
 }
