@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import com.watermelon.superhero.databinding.FragmentBiographyBinding
+import com.watermelon.superhero.model.data.response.Hero
 import com.watermelon.superhero.ui.base.BaseFragment
 
 
@@ -17,6 +18,7 @@ class BiographyFragment : BaseFragment<FragmentBiographyBinding>() {
         binding.apply {
             heroFullName.text = hero.biography?.fullName
             heroName.text = hero.name
+            biographyRecycler.adapter = BiographyAdapter(listOf(hero))
         }
         sharedElementEnterTransition = TransitionInflater.from(context)
             .inflateTransition(android.R.transition.move)
