@@ -17,5 +17,8 @@
     <dimen name="search_bar_corners_radius">8dp</dimen>
     <dimen name="text20sp">20sp</dimen>
     <dimen name="text18sp">18sp</dimen>
+    <dimen name="text16sp">16sp</dimen>
     <dimen name="margin28dp">28dp</dimen>
+    <dimen name="margin14dp">14dp</dimen>
+    <dimen name="margin8dp">8dp</dimen>
 </resources>

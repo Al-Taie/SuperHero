@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_hero"
     android:layout_width="275dp"
-    android:layout_height="454dp"
+    android:layout_height="432dp"
     android:layout_margin="16dp"
     app:cardCornerRadius="10dp"
     app:cardElevation="24dp"
@@ -15,19 +15,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <!--        <ImageView-->
-<!--            android:id="@+id/imageView5"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="100dp"-->
-<!--            android:adjustViewBounds="true"-->
-<!--            android:scaleType="centerCrop"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="1.0"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:srcCompat="@drawable/header_transparent" />-->
-
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/hero_image"
@@ -44,34 +31,45 @@
             app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
             tools:src="@tools:sample/avatars" />
 
-
-        <TextView
-            android:id="@+id/hero_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:background="@drawable/header_shap"
-            android:fontFamily="@font/lora_bold"
-            android:padding="16dp"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text18sp"
-            android:textStyle="bold"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pargraf"
+            android:layout_width="0dp"
+            android:layout_height="86dp"
+            android:background="@drawable/header_shape"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:text="Super Man" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
 
-<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--            android:id="@+id/pargraf"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="76dp"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.0"-->
-<!--            app:layout_constraintStart_toStartOf="parent">-->
+            <TextView
+                android:id="@+id/hero_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/lora_bold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Super Man" />
+
+            <TextView
+                android:id="@+id/hero_description"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/lora_bold"
+                android:lines="2"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/hero_name"
+                app:layout_constraintTop_toBottomOf="@+id/hero_name"
+                tools:text="Batman Family, Batman Incorporated, Justice League" />
 
 
-
-<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,9 +14,12 @@
         app:layout_collapseMode="parallax"
         android:layout_height="400dp"
         app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="centerCrop"
+        android:transitionName="@string/image_transition"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@color/brandColor" />
+        tools:src="@color/brandColor"
+        tools:ignore="ContentDescription" />
 
     <View
         android:id="@+id/image_gradient"
