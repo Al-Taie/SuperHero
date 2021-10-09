@@ -9,8 +9,6 @@ import com.watermelon.superhero.databinding.ItemAppearanceBinding
 import com.watermelon.superhero.databinding.ItemBiographyBinding
 import com.watermelon.superhero.databinding.ItemGroupAffiliationBinding
 import com.watermelon.superhero.databinding.ItemRelativesBinding
-import com.watermelon.superhero.model.data.response.Biography
-import com.watermelon.superhero.model.data.response.Connections
 import com.watermelon.superhero.model.data.response.Hero
 
 
@@ -102,5 +100,4 @@ class BiographyAdapter(private val list: List<Hero>):
         const val VIEW_TYPE_GROUP_AFFILIATION = 13
         const val VIEW_TYPE_BIOGRAPHY = 14
     }
-
 }
