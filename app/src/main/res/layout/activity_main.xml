@@ -21,6 +21,18 @@
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/loading" />
 
+    <Button
+        android:id="@+id/retry_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin2x"
+        android:text="@string/retry"
+        android:backgroundTint="@color/brandColor"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/loading"
+        app:layout_constraintEnd_toEndOf="@id/loading"
+        app:layout_constraintTop_toBottomOf="@id/loading"/>
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container"
         android:name="androidx.navigation.fragment.NavHostFragment"

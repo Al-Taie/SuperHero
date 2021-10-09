@@ -19,4 +19,5 @@
     <string name="browse_for_any_superhero_that_comes_to_your_mind">Browse For any superhero that comes to your mind..</string>
     <string name="tip_click_the_superhero_picture_to_read_more">Tip : Click the superhero picture to read more.</string>
     <string name="hero">hero.</string>
+    <string name="retry">retry</string>
 </resources>

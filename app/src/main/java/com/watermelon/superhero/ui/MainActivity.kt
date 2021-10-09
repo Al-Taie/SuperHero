@@ -21,7 +21,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), IMainView {
         mainPresenter.bindOnUI()
     }
 
-    override fun callBack() {}
+    override fun callBack() {
+        binding.retryButton.setOnClickListener {
+            mainPresenter.bindOnUI()
+        }
+    }
 
     override val inflate: (LayoutInflater) -> ActivityMainBinding
         get() = ActivityMainBinding::inflate
