@@ -1,10 +1,9 @@
 package com.watermelon.superhero.ui.biography
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.watermelon.superhero.R
+import androidx.viewbinding.ViewBinding
 import com.watermelon.superhero.databinding.ItemAppearanceBinding
 import com.watermelon.superhero.databinding.ItemBiographyBinding
 import com.watermelon.superhero.databinding.ItemGroupAffiliationBinding
@@ -12,26 +11,30 @@ import com.watermelon.superhero.databinding.ItemRelativesBinding
 import com.watermelon.superhero.model.data.response.Hero
 
 
-class BiographyAdapter(private val list: List<Hero>):
+class BiographyAdapter(private val hero: Hero):
     RecyclerView.Adapter<BiographyAdapter.BaseViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         when(viewType) {
             VIEW_TYPE_RELATIVES ->{
-                val view = LayoutInflater.from(parent.context).inflate(R.layout.item_relatives, parent,false)
-                return RelativesViewHolder(view)
+                val inflater = LayoutInflater.from(parent.context)
+                val binding = ItemRelativesBinding.inflate(inflater, parent, false)
+                return RelativesViewHolder(binding)
             }
             VIEW_TYPE_APPEARANCE ->{
-                val view = LayoutInflater.from(parent.context).inflate(R.layout.item_appearance, parent,false)
-                return AppearanceViewHolder(view)
+                val inflater = LayoutInflater.from(parent.context)
+                val binding = ItemAppearanceBinding.inflate(inflater, parent, false)
+                return AppearanceViewHolder(binding)
             }
             VIEW_TYPE_GROUP_AFFILIATION ->{
-                val view = LayoutInflater.from(parent.context).inflate(R.layout.item_group_affiliation, parent,false)
-                return GroupAffiliationViewHolder(view)
+                val inflater = LayoutInflater.from(parent.context)
+                val binding = ItemGroupAffiliationBinding.inflate(inflater, parent, false)
+                return GroupAffiliationViewHolder(binding)
             }
             VIEW_TYPE_BIOGRAPHY ->{
-                val view = LayoutInflater.from(parent.context).inflate(R.layout.item_biography, parent,false)
-                return BiographyViewHolder(view)
+                val inflater = LayoutInflater.from(parent.context)
+                val binding = ItemBiographyBinding.inflate(inflater, parent, false)
+                return BiographyViewHolder(binding)
             }
         }
 
@@ -39,36 +42,35 @@ class BiographyAdapter(private val list: List<Hero>):
     }
 
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
-        val currentCard = list[position]
         when(holder){
             is RelativesViewHolder -> {
                 holder.binding.apply {
-                    relativesText.text = currentCard.connections?.relatives
+                    relativesText.text = hero.connections?.relatives
                 }
             }
             is AppearanceViewHolder -> {
                 holder.binding.apply {
-                    heightText.text = currentCard.appearance?.height.toString()
-                    weightText.text = currentCard.appearance?.weight.toString()
-                    raceText.text = currentCard.appearance?.race
-                    genderText.text = currentCard.appearance?.gender
+                    heightText.text = hero.appearance?.height.toString()
+                    weightText.text = hero.appearance?.weight.toString()
+                    raceText.text = hero.appearance?.race
+                    genderText.text = hero.appearance?.gender
                 }
             }
             is GroupAffiliationViewHolder -> {
                 holder.binding.apply {
-                    groupAffiliationText.text = currentCard.connections?.groupAffiliation
+                    groupAffiliationText.text = hero.connections?.groupAffiliation
                 }
             }
             is BiographyViewHolder -> {
                 holder.binding.apply {
-                    aliasesText.text = currentCard.biography?.aliases.toString()
-                    placeOfBirthText.text = currentCard.biography?.placeOfBirth
+                    aliasesText.text = hero.biography?.aliases.toString()
+                    placeOfBirthText.text = hero.biography?.placeOfBirth
                 }
             }
         }
     }
 
-    override fun getItemCount() = list.size
+    override fun getItemCount() = ITEM_COUNT
 
     override fun getItemViewType(position: Int): Int {
         return when (position) {
@@ -79,25 +81,18 @@ class BiographyAdapter(private val list: List<Hero>):
         }
     }
 
-    abstract class BaseViewHolder(viewItem: View) : RecyclerView.ViewHolder(viewItem)
+    abstract class BaseViewHolder(binding: ViewBinding) : RecyclerView.ViewHolder(binding.root)
 
-    class RelativesViewHolder(viewItem: View) : BaseViewHolder(viewItem) {
-        val binding = ItemRelativesBinding.bind(viewItem)
-    }
-    class AppearanceViewHolder(viewItem: View) : BaseViewHolder(viewItem) {
-        val binding = ItemAppearanceBinding.bind(viewItem)
-    }
-    class GroupAffiliationViewHolder(viewItem: View) : BaseViewHolder(viewItem) {
-        val binding = ItemGroupAffiliationBinding.bind(viewItem)
-    }
-    class BiographyViewHolder(viewItem: View) : BaseViewHolder(viewItem) {
-        val binding = ItemBiographyBinding.bind(viewItem)
-    }
+    inner class RelativesViewHolder(val binding: ItemRelativesBinding) : BaseViewHolder(binding)
+    inner class AppearanceViewHolder(val binding: ItemAppearanceBinding) : BaseViewHolder(binding)
+    inner class GroupAffiliationViewHolder(val binding: ItemGroupAffiliationBinding) : BaseViewHolder(binding)
+    inner class BiographyViewHolder(val binding: ItemBiographyBinding) : BaseViewHolder(binding)
 
     companion object {
         const val VIEW_TYPE_RELATIVES = 11
         const val VIEW_TYPE_APPEARANCE = 12
         const val VIEW_TYPE_GROUP_AFFILIATION = 13
         const val VIEW_TYPE_BIOGRAPHY = 14
+        const val ITEM_COUNT = 4
     }
 }
