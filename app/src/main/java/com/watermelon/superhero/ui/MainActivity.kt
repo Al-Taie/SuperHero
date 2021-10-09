@@ -9,6 +9,7 @@ import com.watermelon.superhero.ui.base.BaseActivity
 import com.watermelon.superhero.ui.home.HomeFragment
 import com.watermelon.superhero.ui.interfaces.HomeListener
 import com.watermelon.superhero.ui.interfaces.IMainView
+import com.watermelon.superhero.ui.search.SearchFragment
 import com.watermelon.superhero.util.slideVisibility
 
 class MainActivity : BaseActivity<ActivityMainBinding>(), IMainView {
@@ -19,7 +20,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), IMainView {
     override fun setup() {
         mainPresenter.view = this
         mainPresenter.bindOnUI()
-
     }
 
     override fun callBack() {}
@@ -28,38 +28,31 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), IMainView {
         get() = ActivityMainBinding::inflate
 
     override fun showLoading() {
-        binding.apply {
-            loading.apply {
-                setAnimation(R.raw.loading)
-                playAnimation()
-                slideVisibility(true)
-            }
-            fragmentContainer.slideVisibility(false)
-        }
+        setLoadingAnimation()
     }
 
     override fun hideLoading() {
-        binding.apply {
-            loading.slideVisibility(false)
-            fragmentContainer.slideVisibility(true)
-        }
+        setLoadingAnimation(visible = false)
     }
 
     override fun showError() {
-        binding.apply {
-            loading.apply {
-                setAnimation(R.raw.no_connection)
-                playAnimation()
-                slideVisibility(visibility = true)
-            }
-            fragmentContainer.slideVisibility(false)
-        }
+        setLoadingAnimation(R.raw.no_connection)
     }
 
     override fun updateUI(result: List<Hero>) {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
-        homeListener = navHostFragment?.childFragmentManager?.fragments?.get(0) as HomeFragment
-        homeListener.updateHomeUI(result = result)
+        navHostFragment?.let {
+            homeListener = navHostFragment.childFragmentManager.fragments[0] as HomeFragment
+            homeListener.updateHomeUI(result = result)
+        }
     }
 
+    private fun setLoadingAnimation(rawRes: Int = R.raw.loading, visible: Boolean = true) {
+        binding.loading.apply {
+            setAnimation(rawRes)
+            playAnimation()
+            slideVisibility(visible)
+        }
+        binding.fragmentContainer.slideVisibility(!visible)
+    }
 }
