@@ -18,9 +18,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeListener {
     override fun setup() {}
 
     override fun callBack() {
-        binding.searchBar.setOnClickListener { view ->
-            Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_searchFragment)
-        }
     }
 
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentHomeBinding
