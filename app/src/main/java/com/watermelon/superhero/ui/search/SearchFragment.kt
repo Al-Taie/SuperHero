@@ -1,7 +1,6 @@
 package com.watermelon.superhero.ui.search
 
 import android.transition.TransitionInflater
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.widget.doOnTextChanged
@@ -16,8 +15,11 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), ISearchPresenter {
 
     override fun setup() {
         presenter.view = this
-        binding.searchBar.doOnTextChanged { text, _, _, _ ->
-            presenter.getSearch(text)
+        binding.searchBar.apply {
+            doOnTextChanged { text, _, _, _ ->
+                presenter.getSearch(text)
+            }
+            requestFocus()
         }
     }
 
