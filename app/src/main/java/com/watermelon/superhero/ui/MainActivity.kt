@@ -9,7 +9,6 @@ import com.watermelon.superhero.ui.base.BaseActivity
 import com.watermelon.superhero.ui.home.HomeFragment
 import com.watermelon.superhero.ui.interfaces.HomeListener
 import com.watermelon.superhero.ui.interfaces.IMainView
-import com.watermelon.superhero.ui.search.SearchFragment
 import com.watermelon.superhero.util.slideVisibility
 
 class MainActivity : BaseActivity<ActivityMainBinding>(), IMainView {
@@ -36,7 +35,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), IMainView {
     }
 
     override fun showError() {
-        setLoadingAnimation(R.raw.no_connection)
+        setLoadingAnimation(R.raw.no_connection, loop = 0)
     }
 
     override fun updateUI(result: List<Hero>) {
@@ -47,12 +46,20 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), IMainView {
         }
     }
 
-    private fun setLoadingAnimation(rawRes: Int = R.raw.loading, visible: Boolean = true) {
-        binding.loading.apply {
-            setAnimation(rawRes)
-            playAnimation()
-            slideVisibility(visible)
+    private fun setLoadingAnimation(rawRes: Int = R.raw.loading,
+        visible: Boolean = true, loop: Int = -1) {
+
+        binding.apply {
+
+            loading.apply {
+                setAnimation(rawRes)
+                repeatCount = loop
+                playAnimation()
+                slideVisibility(visible)
+            }
+
+            retryButton.slideVisibility(visible)
+            fragmentContainer.slideVisibility(!visible)
         }
-        binding.fragmentContainer.slideVisibility(!visible)
     }
 }
