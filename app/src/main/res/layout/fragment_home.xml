@@ -53,6 +53,7 @@
         android:layout_marginEnd="32dp"
         android:clickable="true"
         android:focusable="true"
+        android:transitionName="@string/search_transition"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"

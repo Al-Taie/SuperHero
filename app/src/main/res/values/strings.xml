@@ -5,6 +5,7 @@
     <string name="search">search</string>
     <string name="search_fragment_message">Browse For any superhero that\n comes to your mind..</string>
     <string name="image_transition">imageTransition</string>
+    <string name="search_transition">searchTransition</string>
     <string name="next">Next</string>
     <string name="group_affiliation">Group Affiliation</string>
     <string name="relatives">Relatives</string>
@@ -19,4 +20,5 @@
     <string name="browse_for_any_superhero_that_comes_to_your_mind">Browse For any superhero that comes to your mind..</string>
     <string name="tip_click_the_superhero_picture_to_read_more">Tip : Click the superhero picture to read more.</string>
     <string name="hero">hero.</string>
+    <string name="c">heroImage</string>
 </resources>
