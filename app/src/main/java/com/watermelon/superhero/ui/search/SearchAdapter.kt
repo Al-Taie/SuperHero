@@ -4,13 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.watermelon.superhero.R
 import com.watermelon.superhero.databinding.ItemSearchRecyclerViewBinding
 import com.watermelon.superhero.model.data.response.Hero
-import com.watermelon.superhero.ui.home.HomeFragmentDirections
 
 class SearchAdapter(private val list: List<Hero>) :
     RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
@@ -33,10 +31,7 @@ class SearchAdapter(private val list: List<Hero>) :
                 textHeroRealName.text = biography?.fullName
                 loadImage(imageUrl, itemImage)
                 itemImage.setOnClickListener { view ->
-                    val action = SearchFragmentDirections.actionSearchFragmentToBiographyFragment(
-                        currentImage = "",
-                        currentSearchImage = imageUrl
-                    )
+                    val action = SearchFragmentDirections.actionSearchFragmentToBiographyFragment(this)
                     Navigation.findNavController(view).navigate(action)
                 }
             }
