@@ -30,12 +30,11 @@ class SearchAdapter(private val list: List<Hero>) :
                 textHeroName.text = name.toString()
                 textHeroRealName.text = biography?.fullName
                 loadImage(imageUrl, itemImage)
-                itemImage.setOnClickListener { view ->
+                itemRecycleSearch.setOnClickListener { view ->
                     val action = SearchFragmentDirections.actionSearchFragmentToBiographyFragment(this)
                     Navigation.findNavController(view).navigate(action)
                 }
             }
-
         }
     }
 
