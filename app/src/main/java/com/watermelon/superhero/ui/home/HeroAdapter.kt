@@ -29,7 +29,7 @@ class HeroAdapter(private val list: List<Hero>) :
             with(list[position]) {
                 val imageUrl = image?.url.toString()
                 heroName.text = name.toString()
-//                heroDescription.text = work?.occupation.toString()
+                heroDescription.text = work?.occupation.toString()
                 loadImage(imageUrl, heroImage)
 
                 cardHero.setOnClickListener { listener.onItemClicked(heroImage, hero = this) }
