@@ -41,7 +41,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="32dp"
-            android:text="Browse For any superhero that                        comes to your mind.."
+            android:text="Meet your favorite superhero and Get to know him more.. "
             android:textSize="@dimen/text18sp"
             android:textColor="@color/headerText"
             app:layout_constraintEnd_toEndOf="parent"
@@ -68,6 +68,7 @@
             android:layout_marginTop="8dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -76,6 +77,7 @@
             tools:listitem="@layout/item_hero" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
