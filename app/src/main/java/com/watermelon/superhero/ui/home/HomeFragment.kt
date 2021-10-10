@@ -27,7 +27,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeListener {
 
     override fun onResume() {
         super.onResume()
-        binding.recyclerHero.adapter =HeroAdapter(presenter.getListFromMainRepository())
+        val adapter = HeroAdapter(presenter.getListFromMainRepository())
+        adapter.listener = this
+        binding.recyclerHero.adapter = adapter
         recyclerStyle()
     }
 
