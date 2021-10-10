@@ -1,26 +1,25 @@
-package com.watermelon.superhero.ui.home
+package com.watermelon.superhero.ui.search
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.watermelon.superhero.R
-import com.watermelon.superhero.databinding.ItemHeroBinding
+import com.watermelon.superhero.databinding.ItemSearchRecyclerViewBinding
 import com.watermelon.superhero.model.data.response.Hero
-import com.watermelon.superhero.ui.interfaces.HomeListener
 
-class HeroAdapter(private val list: List<Hero>) :
-    RecyclerView.Adapter<HeroAdapter.ViewHolder>() {
-    lateinit var listener: HomeListener
+class SearchAdapter(private val list: List<Hero>) :
+    RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
 
-    inner class ViewHolder(val binding: ItemHeroBinding) : RecyclerView.ViewHolder(binding.root)
+
+    inner class ViewHolder(val binding: ItemSearchRecyclerViewBinding) :
+        RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ItemHeroBinding.inflate(inflater, parent, false)
+        val binding = ItemSearchRecyclerViewBinding.inflate(inflater, parent, false)
         return ViewHolder(binding)
     }
 
@@ -28,11 +27,13 @@ class HeroAdapter(private val list: List<Hero>) :
         holder.binding.apply {
             with(list[position]) {
                 val imageUrl = image?.url.toString()
-                heroName.text = name.toString()
-//                heroDescription.text = work?.occupation.toString()
-                loadImage(imageUrl, heroImage)
-
-                cardHero.setOnClickListener { listener.onItemClicked(heroImage, hero = this) }
+                textHeroName.text = name.toString()
+                textHeroRealName.text = biography?.fullName
+                loadImage(imageUrl, itemImage)
+                itemImage.setOnClickListener { view ->
+                    val action = SearchFragmentDirections.actionSearchFragmentToBiographyFragment(this)
+                    Navigation.findNavController(view).navigate(action)
+                }
             }
 
         }

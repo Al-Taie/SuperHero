@@ -4,4 +4,19 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="search">search</string>
     <string name="search_fragment_message">Browse For any superhero that\n comes to your mind..</string>
+    <string name="image_transition">imageTransition</string>
+    <string name="next">Next</string>
+    <string name="group_affiliation">Group Affiliation</string>
+    <string name="relatives">Relatives</string>
+    <string name="previous">Previous</string>
+    <string name="appearance">Appearance</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="race">Race</string>
+    <string name="gender">Gender</string>
+    <string name="aliases">Aliases</string>
+    <string name="place_of_birth">Place Of Birth</string>
+    <string name="browse_for_any_superhero_that_comes_to_your_mind">Browse For any superhero that comes to your mind..</string>
+    <string name="tip_click_the_superhero_picture_to_read_more">Tip : Click the superhero picture to read more.</string>
+    <string name="hero">hero.</string>
 </resources>

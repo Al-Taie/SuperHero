@@ -9,13 +9,12 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
 object MainRepository {
-    var superHeroName = "a"
     private val dispatcher = Dispatchers.IO
 
-    fun getSuperHero(): Flow<Status<Parent>>{
+    fun getSuperHero(text: String = "a"): Flow<Status<Parent>>{
         return flow {
             emit(Status.Loading)
-            emit(Client.makeSuperHeroRequest())
+            emit(Client.makeSuperHeroRequest(text))
         }.flowOn(dispatcher)
     }
 }

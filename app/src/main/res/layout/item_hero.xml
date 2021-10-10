@@ -3,12 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_hero"
     android:layout_width="275dp"
     android:layout_height="432dp"
     android:layout_margin="16dp"
     app:cardCornerRadius="10dp"
     app:cardElevation="24dp"
-
     android:backgroundTint="@color/textColor"
     >
 
@@ -20,7 +20,7 @@
             android:id="@+id/hero_image"
             android:layout_width="0dp"
             android:layout_height="0dp"
-
+            android:transitionName="heroImage"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

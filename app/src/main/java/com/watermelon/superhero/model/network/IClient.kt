@@ -5,6 +5,6 @@ import com.watermelon.superhero.model.data.response.Parent
 import okhttp3.HttpUrl
 
 interface IClient {
-    fun initUrl(path: String): HttpUrl
-    fun makeSuperHeroRequest(): Status<Parent>
+    fun initUrl(path: String, query: String = "a"): HttpUrl
+    fun makeSuperHeroRequest(query: String): Status<Parent>
 }
