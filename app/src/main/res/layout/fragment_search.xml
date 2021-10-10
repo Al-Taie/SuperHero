@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:background="@color/white"
+    android:background="@color/background"
     tools:context=".ui.search.SearchFragment">
 
     <com.airbnb.lottie.LottieAnimationView
@@ -28,6 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         style="@style/SearchBar"
+        android:transitionName="searchBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -37,7 +38,8 @@
     <View
         android:id="@+id/break_line"
         android:layout_width="0dp"
-        android:layout_height="2dp"
+        android:layout_height="1dp"
+        android:transitionName="line"
         android:layout_marginVertical="12dp"
         android:background="@color/lightGrey"
         app:layout_constraintEnd_toEndOf="@+id/search_bar"
