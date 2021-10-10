@@ -14,7 +14,10 @@ import com.watermelon.superhero.ui.base.BaseFragment
 import com.watermelon.superhero.ui.interfaces.HomeListener
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeListener {
-    override fun setup() {}
+    override fun setup() {
+
+
+    }
 
     override fun callBack() {
         binding.searchBar.setOnFocusChangeListener { _, isFocused ->
