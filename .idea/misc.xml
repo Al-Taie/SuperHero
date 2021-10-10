@@ -21,8 +21,12 @@
         <entry key="..\:/projects/SuperHero/app/src/main/res/layout/fragment_biography.xml" value="0.1" />
         <entry key="..\:/projects/SuperHero/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/projects/SuperHero/app/src/main/res/layout/fragment_search.xml" value="0.264" />
+        <entry key="..\:/projects/SuperHero/app/src/main/res/layout/item_appearance.xml" value="0.21981981981981982" />
+        <entry key="..\:/projects/SuperHero/app/src/main/res/layout/item_biography.xml" value="0.21981981981981982" />
+        <entry key="..\:/projects/SuperHero/app/src/main/res/layout/item_group_affiliation.xml" value="0.21981981981981982" />
         <entry key="..\:/projects/SuperHero/app/src/main/res/layout/item_hero.xml" value="0.18" />
-        <entry key="..\:/projects/SuperHero/app/src/main/res/layout/item_search_recycler_view.xml" value="0.1102077687443541" />
+        <entry key="..\:/projects/SuperHero/app/src/main/res/layout/item_relatives.xml" value="0.10729991204925242" />
+        <entry key="..\:/projects/SuperHero/app/src/main/res/layout/item_search_recycler_view.xml" value="0.4" />
       </map>
     </option>
   </component>

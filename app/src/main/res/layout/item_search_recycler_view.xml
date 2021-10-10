@@ -32,12 +32,17 @@
 
     <TextView
         android:id="@+id/text_hero_real_name"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:lines="1"
+        android:gravity="center"
         android:textSize="@dimen/text18sp"
-        app:layout_constraintStart_toStartOf="@+id/text_hero_name"
-        app:layout_constraintTop_toBottomOf="@id/text_hero_name"
-        app:layout_constraintEnd_toEndOf="@id/text_hero_name"
-        tools:text="Bruce Wayne"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/item_image"
+        app:layout_constraintTop_toBottomOf="@+id/text_hero_name"
+        tools:text="Bruce Wayne" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
