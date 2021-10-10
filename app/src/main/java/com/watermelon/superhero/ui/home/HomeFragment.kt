@@ -21,7 +21,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeListener {
             if (isFocused) {
                 val action = HomeFragmentDirections.actionHomeFragmentToSearchFragment()
                 val extras = FragmentNavigatorExtras(
-                   binding.searchBar to getString(R.string.search_transition)
+                   binding.searchBar to getString(R.string.search_transition),
+                    binding.breakLine to getString(R.string.line_transition),
+                    binding.clearTextImage to getString(R.string.clear_transition)
                 )
                 findNavController().navigate(action,extras)
             }

@@ -24,6 +24,7 @@
         android:layout_height="1dp"
         android:layout_marginVertical="12dp"
         android:layout_marginStart="16dp"
+        android:transitionName="@string/line_transition"
         android:layout_marginEnd="16dp"
         android:background="@color/lightGrey"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,6 +44,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/break_line" />
+
+    <ImageView
+        android:id="@+id/clear_text_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_close_24"
+        android:elevation="1dp"
+        android:transitionName="@string/clear_transition"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/search_bar"
+        app:layout_constraintEnd_toEndOf="@+id/search_bar"
+        app:layout_constraintTop_toTopOf="@+id/search_bar"
+        tools:ignore="ContentDescription" />
 
     <EditText
         android:id="@+id/search_bar"
