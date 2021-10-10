@@ -1,6 +1,5 @@
 package com.watermelon.superhero.model.data.response
 
-
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
@@ -21,4 +20,4 @@ data class Biography(
     val placeOfBirth: String?,
     @SerializedName("publisher")
     val publisher: String?
-): Parcelable
+) : Parcelable

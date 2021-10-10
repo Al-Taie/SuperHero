@@ -33,9 +33,7 @@ class HomePresenter : IHomePresenter {
         }
     }
 
-
     fun getListFromMainRepository():List<Hero> {
         return MainRepository.heroes
-
     }
 }

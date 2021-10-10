@@ -20,13 +20,13 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), ISearchPresenter {
     override fun setup() {
         presenter.view = this
 
-            binding.searchBar.apply {
-                doOnTextChanged { text, _, _, _ ->
-                    presenter.getSearch(text.toString())
-                    presenter.clearHeroList()
-                }
-                requestFocus()
+        binding.searchBar.apply {
+            doOnTextChanged { text, _, _, _ ->
+                presenter.getSearch(text.toString())
+                presenter.clearHeroList()
             }
+            requestFocus()
+        }
     }
 
     override fun onResume() {
@@ -38,9 +38,8 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), ISearchPresenter {
             }
             requestFocus()
         }
-        binding.searchRecyclerView.adapter = SearchAdapter(presenter.getSearchListFromMainRepository())
-
-
+        binding.searchRecyclerView.adapter =
+            SearchAdapter(presenter.getSearchListFromMainRepository())
     }
 
     override fun callBack() {
@@ -54,15 +53,12 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), ISearchPresenter {
         }
     }
 
-
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentSearchBinding
         get() = FragmentSearchBinding::inflate
 
     override fun onSearchResult(result: List<Hero>) {
         binding.searchRecyclerView.adapter = SearchAdapter(result)
     }
-
-
 
     override fun showLoading() {
         setLoadingAnimation()
@@ -76,8 +72,10 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), ISearchPresenter {
         setLoadingAnimation(R.raw.no_connection, loop = 0)
     }
 
-    private fun setLoadingAnimation(rawRes: Int = R.raw.loading,
-                                    visible: Boolean = true, loop: Int = -1) {
+    private fun setLoadingAnimation(
+        rawRes: Int = R.raw.loading,
+        visible: Boolean = true, loop: Int = -1
+    ) {
         binding.loading.apply {
             setAnimation(rawRes)
             repeatCount = loop

@@ -1,6 +1,5 @@
 package com.watermelon.superhero.model.data.response
 
-
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
@@ -9,4 +8,4 @@ import kotlinx.parcelize.Parcelize
 data class Image(
     @SerializedName("url")
     val url: String?
-): Parcelable
+) : Parcelable

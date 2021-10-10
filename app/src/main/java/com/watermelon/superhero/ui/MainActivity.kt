@@ -21,7 +21,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), IMainView {
         mainPresenter.bindOnUI()
     }
 
-
     override fun callBack() {
         binding.retryButton.setOnClickListener {
             mainPresenter.bindOnUI()
@@ -51,18 +50,18 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), IMainView {
         }
     }
 
-    private fun setLoadingAnimation(rawRes: Int = R.raw.loading,
-        visible: Boolean = true, loop: Int = -1) {
+    private fun setLoadingAnimation(
+        rawRes: Int = R.raw.loading,
+        visible: Boolean = true, loop: Int = -1
+    ) {
 
         binding.apply {
-
             loading.apply {
                 setAnimation(rawRes)
                 repeatCount = loop
                 playAnimation()
                 slideVisibility(visible)
             }
-
             retryButton.slideVisibility(visible)
             fragmentContainer.slideVisibility(!visible)
         }

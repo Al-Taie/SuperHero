@@ -13,7 +13,6 @@ import com.watermelon.superhero.model.data.response.Hero
 class SearchAdapter(private val list: List<Hero>) :
     RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
 
-
     inner class ViewHolder(val binding: ItemSearchRecyclerViewBinding) :
         RecyclerView.ViewHolder(binding.root)
 
@@ -31,7 +30,8 @@ class SearchAdapter(private val list: List<Hero>) :
                 textHeroRealName.text = biography?.fullName
                 loadImage(imageUrl, itemImage)
                 itemRecycleSearch.setOnClickListener { view ->
-                    val action = SearchFragmentDirections.actionSearchFragmentToBiographyFragment(this)
+                    val action =
+                        SearchFragmentDirections.actionSearchFragmentToBiographyFragment(this)
                     Navigation.findNavController(view).navigate(action)
                 }
             }

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/item_recycle_search"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:layout_marginVertical="@dimen/margin2x"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_marginVertical="@dimen/margin2x">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/item_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:scaleType="centerCrop"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars"/>
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
+        tools:src="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/text_hero_name"
@@ -37,12 +37,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:ellipsize="end"
-        android:lines="1"
         android:gravity="center"
+        android:lines="1"
         android:textSize="@dimen/text18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/item_image"
         app:layout_constraintTop_toBottomOf="@+id/text_hero_name"
         tools:text="Bruce Wayne" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

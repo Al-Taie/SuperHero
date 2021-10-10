@@ -1,6 +1,5 @@
 package com.watermelon.superhero.presenter
 
-import android.util.Log
 import com.watermelon.superhero.model.data.Status
 import com.watermelon.superhero.model.data.response.Hero
 import com.watermelon.superhero.model.repository.MainRepository
@@ -27,7 +26,6 @@ class SearchPresenter {
                     is Status.Success -> response.data.results?.let { result ->
                         MainRepository.initHeroList(result)
                         view.onSearchResult(result)
-
                     }
                     is Status.Loading -> view.showLoading()
                     is Status.Fail -> view.hideLoading()
@@ -36,11 +34,11 @@ class SearchPresenter {
         }
     }
 
-    fun getSearchListFromMainRepository():List<Hero> {
-       return MainRepository.heroes
-
+    fun getSearchListFromMainRepository(): List<Hero> {
+        return MainRepository.heroes
     }
-    fun clearHeroList(){
+
+    fun clearHeroList() {
         MainRepository.heroes.clear()
     }
 }

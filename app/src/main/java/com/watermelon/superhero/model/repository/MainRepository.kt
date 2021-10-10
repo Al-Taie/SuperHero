@@ -12,8 +12,6 @@ import kotlinx.coroutines.flow.flowOn
 object MainRepository {
     private val dispatcher = Dispatchers.IO
 
-
-
     fun getSuperHero(text: String = "a"): Flow<Status<Parent>>{
         return flow {
             emit(Status.Loading)
@@ -26,5 +24,4 @@ object MainRepository {
     fun initHeroList(heroes: List<Hero>) = heroesList.addAll(heroes)
 
     val heroes get() = heroesList
-
 }
