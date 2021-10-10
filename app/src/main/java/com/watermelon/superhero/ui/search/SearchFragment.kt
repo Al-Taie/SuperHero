@@ -13,10 +13,10 @@ import com.watermelon.superhero.ui.base.BaseFragment
 import com.watermelon.superhero.util.slideVisibility
 import kotlinx.coroutines.FlowPreview
 
+@FlowPreview
 class SearchFragment : BaseFragment<FragmentSearchBinding>(), ISearchPresenter {
     private val presenter = SearchPresenter()
 
-    @FlowPreview
     override fun setup() {
         presenter.view = this
         binding.searchBar.apply {

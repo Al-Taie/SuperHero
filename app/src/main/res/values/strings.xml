@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">SuperHero</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="search">search</string>
     <string name="search_fragment_message">Browse For any superhero that\n comes to your mind..</string>
     <string name="image_transition">imageTransition</string>
+    <string name="search_transition">searchTransition</string>
     <string name="next">Next</string>
     <string name="group_affiliation">Group Affiliation</string>
     <string name="relatives">Relatives</string>
@@ -20,4 +20,5 @@
     <string name="tip_click_the_superhero_picture_to_read_more">Tip : Click the superhero picture to read more.</string>
     <string name="hero">hero.</string>
     <string name="retry">retry</string>
+    <string name="c">heroImage</string>
 </resources>
