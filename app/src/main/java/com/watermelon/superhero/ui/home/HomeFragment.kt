@@ -20,10 +20,7 @@ import com.watermelon.superhero.ui.search.SearchAdapter
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeListener {
     private val presenter = HomePresenter()
-    override fun setup() {
-
-
-    }
+    override fun setup() {}
 
     override fun onResume() {
         super.onResume()
@@ -50,8 +47,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeListener {
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentHomeBinding
         get() = FragmentHomeBinding::inflate
 
-
-
     override fun updateHomeUI(result: List<Hero>) {
         val adapter = HeroAdapter(result)
         adapter.listener = this
@@ -76,6 +71,5 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeListener {
             }
             setHasFixedSize(true)
         }
-
     }
 }
