@@ -26,8 +26,6 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), ISearchPresenter {
             }
             requestFocus()
         }
-        sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
-
     }
 
     override fun callBack() {

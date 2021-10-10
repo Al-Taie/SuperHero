@@ -19,10 +19,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeListener {
         binding.searchBar.setOnFocusChangeListener { _, isFocused ->
             if (isFocused) {
                 val action = HomeFragmentDirections.actionHomeFragmentToSearchFragment()
-                val extras = FragmentNavigatorExtras(
-                    binding.searchBar to "searchBar",
-                    binding.breakLine to "line")
-                findNavController().navigate(action, extras)
+                findNavController().navigate(action)
             }
         }
     }
