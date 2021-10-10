@@ -3,7 +3,7 @@
 
 
     <style name="appearanceTitleTextStyle">
-        <item name="android:layout_marginTop">@dimen/margin3x</item>
+        <item name="android:layout_marginTop">@dimen/margin4x</item>
         <item name="android:layout_marginStart">@dimen/margin2x</item>
         <item name="android:fontFamily">@font/lora_meduim</item>
         <item name="android:layout_width">wrap_content</item>
