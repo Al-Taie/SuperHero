@@ -21,6 +21,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), IMainView {
         mainPresenter.bindOnUI()
     }
 
+
     override fun callBack() {
         binding.retryButton.setOnClickListener {
             mainPresenter.bindOnUI()

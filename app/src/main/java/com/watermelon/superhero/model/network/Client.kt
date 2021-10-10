@@ -3,6 +3,7 @@ package com.watermelon.superhero.model.network
 import com.google.gson.Gson
 import com.watermelon.superhero.model.data.Status
 import com.watermelon.superhero.model.data.response.Parent
+import com.watermelon.superhero.model.repository.MainRepository
 import com.watermelon.superhero.util.Constant.Link
 import okhttp3.HttpUrl
 import okhttp3.OkHttpClient

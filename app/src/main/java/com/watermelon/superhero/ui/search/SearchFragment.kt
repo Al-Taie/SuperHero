@@ -19,12 +19,28 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), ISearchPresenter {
 
     override fun setup() {
         presenter.view = this
+
+            binding.searchBar.apply {
+                doOnTextChanged { text, _, _, _ ->
+                    presenter.getSearch(text.toString())
+                    presenter.clearHeroList()
+                }
+                requestFocus()
+            }
+    }
+
+    override fun onResume() {
+        super.onResume()
         binding.searchBar.apply {
             doOnTextChanged { text, _, _, _ ->
                 presenter.getSearch(text.toString())
+                presenter.clearHeroList()
             }
             requestFocus()
         }
+        binding.searchRecyclerView.adapter = SearchAdapter(presenter.getSearchListFromMainRepository())
+
+
     }
 
     override fun callBack() {
@@ -45,6 +61,8 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), ISearchPresenter {
     override fun onSearchResult(result: List<Hero>) {
         binding.searchRecyclerView.adapter = SearchAdapter(result)
     }
+
+
 
     override fun showLoading() {
         setLoadingAnimation()

@@ -1,6 +1,7 @@
 package com.watermelon.superhero.presenter
 
 import com.watermelon.superhero.model.data.Status
+import com.watermelon.superhero.model.data.response.Hero
 import com.watermelon.superhero.model.repository.MainRepository
 import com.watermelon.superhero.ui.interfaces.IMainView
 import kotlinx.coroutines.CoroutineScope
@@ -22,6 +23,7 @@ class HomePresenter : IHomePresenter {
             }.collect { response ->
                 when (response) {
                     is Status.Success -> response.data.results?.let { result ->
+                        MainRepository.initHeroList(result)
                         view.hideLoading()
                         view.updateUI(result = result)
                     }
@@ -29,5 +31,11 @@ class HomePresenter : IHomePresenter {
                 }
             }
         }
+    }
+
+
+    fun getListFromMainRepository():List<Hero> {
+        return MainRepository.heroes
+
     }
 }

@@ -1,8 +1,10 @@
 package com.watermelon.superhero.ui.home
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.core.widget.doOnTextChanged
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.mig35.carousellayoutmanager.CarouselLayoutManager
@@ -10,11 +12,26 @@ import com.mig35.carousellayoutmanager.CarouselZoomPostLayoutListener
 import com.watermelon.superhero.R
 import com.watermelon.superhero.databinding.FragmentHomeBinding
 import com.watermelon.superhero.model.data.response.Hero
+import com.watermelon.superhero.presenter.HomePresenter
+import com.watermelon.superhero.presenter.SearchPresenter
 import com.watermelon.superhero.ui.base.BaseFragment
 import com.watermelon.superhero.ui.interfaces.HomeListener
+import com.watermelon.superhero.ui.search.SearchAdapter
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeListener {
-    override fun setup() {}
+    private val presenter = HomePresenter()
+    override fun setup() {
+
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val adapter = HeroAdapter(presenter.getListFromMainRepository())
+        adapter.listener = this
+        binding.recyclerHero.adapter = adapter
+        recyclerStyle()
+    }
 
     override fun callBack() {
         binding.searchBar.setOnFocusChangeListener { _, isFocused ->
@@ -33,11 +50,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeListener {
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentHomeBinding
         get() = FragmentHomeBinding::inflate
 
+
+
     override fun updateHomeUI(result: List<Hero>) {
         val adapter = HeroAdapter(result)
         adapter.listener = this
-        binding.recyclerHero.adapter = adapter
+        binding.recyclerHero.adapter =adapter
         recyclerStyle()
+        Log.i("main",adapter.toString())
     }
 
     override fun onItemClicked(imageView: ImageView, hero: Hero) {
