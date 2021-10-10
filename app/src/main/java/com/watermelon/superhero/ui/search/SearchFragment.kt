@@ -7,7 +7,6 @@ import androidx.core.widget.doOnTextChanged
 import com.watermelon.superhero.R
 import com.watermelon.superhero.databinding.FragmentSearchBinding
 import com.watermelon.superhero.model.data.response.Hero
-import com.watermelon.superhero.model.repository.MainRepository
 import com.watermelon.superhero.presenter.ISearchPresenter
 import com.watermelon.superhero.presenter.SearchPresenter
 import com.watermelon.superhero.ui.base.BaseFragment
@@ -20,16 +19,27 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), ISearchPresenter {
 
     override fun setup() {
         presenter.view = this
-        if (MainRepository.heroes.isEmpty()){
+
             binding.searchBar.apply {
                 doOnTextChanged { text, _, _, _ ->
                     presenter.getSearch(text.toString())
+                    presenter.clearHeroList()
                 }
                 requestFocus()
             }
+    }
 
-        }else
-            binding.searchRecyclerView.adapter = SearchAdapter(presenter.getSearchListFromMain())
+    override fun onResume() {
+        super.onResume()
+        binding.searchBar.apply {
+            doOnTextChanged { text, _, _, _ ->
+                presenter.getSearch(text.toString())
+                presenter.clearHeroList()
+            }
+            requestFocus()
+        }
+        binding.searchRecyclerView.adapter = SearchAdapter(presenter.getSearchListFromMainRepository())
+
 
     }
 

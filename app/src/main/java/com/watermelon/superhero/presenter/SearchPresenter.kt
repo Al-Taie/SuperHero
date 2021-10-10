@@ -27,7 +27,7 @@ class SearchPresenter {
                     is Status.Success -> response.data.results?.let { result ->
                         MainRepository.initHeroList(result)
                         view.onSearchResult(result)
-                        //getSearchListFromMain()
+
                     }
                     is Status.Loading -> view.showLoading()
                     is Status.Fail -> view.hideLoading()
@@ -36,8 +36,11 @@ class SearchPresenter {
         }
     }
 
-    fun getSearchListFromMain():List<Hero> {
+    fun getSearchListFromMainRepository():List<Hero> {
        return MainRepository.heroes
-       // Log.i("inti",MainRepository.heroes.toString())
+
+    }
+    fun clearHeroList(){
+        MainRepository.heroes.clear()
     }
 }
