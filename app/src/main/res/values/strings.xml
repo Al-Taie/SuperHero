@@ -21,4 +21,6 @@
     <string name="hero">hero.</string>
     <string name="retry">retry</string>
     <string name="c">heroImage</string>
+    <string name="clear_transition">clear_transition</string>
+    <string name="line_transition">line_transition</string>
 </resources>
